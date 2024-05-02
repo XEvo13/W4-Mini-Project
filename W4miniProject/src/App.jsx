@@ -1,20 +1,21 @@
 import { useState } from "react";
 import logo from "./assets/images/logo.png";
-import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Sidebar from "./components/Sidebar"
+import "./App.css";
 
 function App() {
   return (
     <div>
       <div>
         <Navbar />
-        <a href="https://react.dev" target="_blank">
+        <Footer />
+        <Sidebar/>
           <img src={logo} className="logo react" alt="React logo" />
-        </a>
       </div>
 
       <h1>e-commerce</h1>
-      <h2>fwediybgit</h2>
     </div>
   );
 }
