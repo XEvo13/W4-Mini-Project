@@ -19,13 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="*" element={<Error />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/sidebar" element={<Sidebar />} />
         </Routes>
       </div>
-        {/* <Footer />
-        <Sidebar/>
-          <img src={logo} className="logo react" alt="React logo" />
-      </div> */}
-
       <h1>e-commerce</h1>
     </div>
   );
