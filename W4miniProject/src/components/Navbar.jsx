@@ -1,11 +1,22 @@
+import { NavLink } from "react-router-dom";
+import User from "../assets/images/user.png"
 
 function Navbar () {
     return (
         <nav className="nav-bar">
         <ul className="nav-bar-ul">
-          <li> <a className="nav-bar-item" > Home </a> </li>  
-          <li> <a className="nav-bar-item" > Products list</a> </li>
-          <li> <a className="nav-bar-item" > About </a> </li>
+            <NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>
+            Search bar
+            </NavLink> 
+            <NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>
+            Home
+            </NavLink>
+            <NavLink to="/Listing" className={({isActive}) => (isActive ? "active" : "")}>
+            Products List
+            </NavLink>
+            <NavLink to="/Profile" className={({isActive}) => (isActive ? "active" : "")}>
+            <img src={User} style={{height:"80px"}}/>
+           </NavLink>   
         </ul>
       </nav>
     )
