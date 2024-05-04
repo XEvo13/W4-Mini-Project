@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "./assets/images/logo.png";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
+import * as React from 'react'
 
 // Pages
 import Homepage from "./components/Homepage";
