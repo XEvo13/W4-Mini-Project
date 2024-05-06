@@ -7,6 +7,7 @@ import productsData from "./products.json"
 
 // Pages
 import Homepage from "./components/Homepage";
+import AddItem from "./AddItem";
 import Error from "./components/Error";
 import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
@@ -18,6 +19,9 @@ function App() {
   const deleteItem = (id) => {
     setProductList(productList.filter((item) => item.id !== id));
   };
+  const addProduct = (product) => {
+    setProductList([...productList, product])};
+  
 
   return (
     <div>
@@ -25,6 +29,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Homepage productList={productList} deleteItem={deleteItem}/>} />
+          <Route path="/AddItem" element={<AddItem addProduct={addProduct} productList={productList}/>}/>
           <Route path="/SingleProduct/:productId" element={<SingleProduct productList={productList} />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="*" element={<Error />} />

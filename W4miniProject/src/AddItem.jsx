@@ -1,57 +1,69 @@
 import { useState } from "react";
-import {v4 as uuidv4} from "uuid";
 import { useNavigate } from "react-router-dom";
 import "./AddItem.css";
 
 const defaultImg =
   "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg";
 
-export default function AddItem({createItem}) {
-    const [name, setName] = useState("");
-    const [imgURL, setImgURL] = useState("");
+export default function AddItem({addProduct,productList}) {
+    const [title, setTitle] = useState("");
+    const [images, setImages] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState(0);
+    const [discountPercentage, setDiscountPercentage] = useState(0);
+    const [rating, setRating] = useState(0);
+    const [stock, setStock] = useState(0);
+    const [brand, setBrand] = useState("");
+    const [category, setCategory] = useState("");
+    
+
     const navigate = useNavigate();
 
-    const handleNameAdd = (e) => {setName(e.target.value);};
+    const handleTitle = (e) => {setTitle(e.target.value);};
 
-    const handleImgAdd = (e) => {setImgURL(e.target.value);};
+    const handleImages = (e) => {setImages(e.target.value);};
 
-    const handleDescriptionAdd = (e) => {setDescription(e.target.value);};
+    const handleDescription = (e) => {setDescription(e.target.value);};
 
-    const handlePriceAdd = (e) => {const value = Number(e.target.value) || ""; if (value < 0) return; setPrice(value);};
+    const handlePrice = (e) => {const value = Number(e.target.value) || ""; if (value < 0) return; setPrice(value);};
 
     const handleSubmit = (e) => {
         e.preventDefault();
    
-        if (!name || !description || !price ) {
+        if (!title || !description || !price ) {
             alert("Please fill in all fields");
             return;
         }
+        
+        const id = productList.length+1;
+        const imgURL = defaultImg;
+        const images = imgURL || defaultImg;
+        addProduct({ id, title, images, description, price,discountPercentage,rating,stock, brand, category });
    
-        const id = uuidv4();
-        const img = imgURL || defaultImg;
-        createItem({ id, name, img, description, price });
-   
-        setName("");
-        setImgURL("");
+        setTitle("");
+        setImages("");
         setDescription("");
         setPrice(0);
+        setDiscountPercentage(0);
+        setRating(0);
+        setStock(0);
+        setBrand("");
+        setCategory("")
    
-        navigate("/items");
+        navigate("/");
     };
 
     return (
         <div>
-        <h1>Add Item</h1>
+        <h1>📱 Add product 📲</h1>
         <form>
             <div className="input-wrapper">
-            <label>Name:</label>
+            <label>Title:</label>
             <input
                 type="text"
                 name="name"
-                value={name}
-                onChange={handleNameAdd}
+                value={title}
+                onChange={handleTitle}
             />
             </div>
 
@@ -60,8 +72,8 @@ export default function AddItem({createItem}) {
             <input
                 type="text"
                 name="imgURL"
-                value={imgURL}
-                onChange={handleImgAdd}
+                value={images}
+                onChange={handleImages}
             />
             </div>
 
@@ -71,7 +83,7 @@ export default function AddItem({createItem}) {
                 type="text"
                 name="description"
                 value={description}
-                onChange={handleDescriptionAdd}
+                onChange={handleDescription}
             />
             </div>
 
@@ -81,7 +93,7 @@ export default function AddItem({createItem}) {
                 type="number"
                 name="price"
                 value={price}
-                onChange={handlePriceAdd}
+                onChange={handlePrice}
             />
             </div>
             <button type="submit" onClick={handleSubmit}>Save</button>
