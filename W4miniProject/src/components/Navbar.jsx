@@ -3,12 +3,9 @@ import User from "../assets/images/user.png"
 
 function Navbar () {
     return (
-        <nav className="nav-bar">
-        <ul className="nav-bar-ul">
-            <NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>
-            Search bar
-            </NavLink> 
-
+        <nav className="nav-bar ">
+        <ul className="nav-bar-ul text-with-border">
+        
             <NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>
             Home
             </NavLink>
