@@ -33,7 +33,7 @@ function App() {
           <Route path="/SingleProduct/:productId" element={<SingleProduct productList={productList} />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="*" element={<Error />} />
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/sidebar" element={<Sidebar />} />
         </Routes>
       </div>
       <h1>e-commerce</h1>
