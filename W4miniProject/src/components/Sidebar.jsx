@@ -1,11 +1,19 @@
+import { NavLink } from "react-router-dom";
+// import Listing from "./Listing";
+import AddItem from "../AddItem";
+
 function SideBar() {
     return(
-        <div className="sidebar">
+        <nav className="sidebar">
             <ul className="sidebar-ul">
-                <li> Create </li>
-                <li> Update </li>
+                <NavLink to="/AddItem" className={({isActive}) => (isActive ? "active" : "")}>
+                    <button className="button" onClick={AddItem}>Create</button>
+                </NavLink>
+                {/* <NavLink to="/Listing" className={({isActive}) => (isActive ? "active" : "")}>
+                    <button className="button" onClick={Listing}>Update</button>
+                </NavLink> */}
             </ul>
-        </div>
+        </nav>
     );
 }
 
