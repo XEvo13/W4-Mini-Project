@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function Listing({productList,deleteItem }) {
 
-  
+  console.log(productList.length)
+  console.log(productList)
     return (
         <div className="input-wrapper">
           <ul className="grid grid-cols-2 gap-4">
@@ -16,6 +17,8 @@ export default function Listing({productList,deleteItem }) {
                <Link to={`/SingleProduct/${product.id}`}>
                   <img src={product.thumbnail} alt={product.title} />
                </Link>
+               <Link className="button" to={`/SingleProduct/${product.id}/edit`}>📱EDIT📲
+               </Link>
                <button onClick={() => deleteItem(product.id)}>🗑️</button>
                <br />
                <br />
@@ -23,5 +26,7 @@ export default function Listing({productList,deleteItem }) {
             ))}
           </ul>
         </div>
+        
       )
+      
 }

@@ -8,6 +8,7 @@ import productsData from "./products.json"
 // Pages
 import Homepage from "./components/Homepage";
 import AddItem from "./AddItem";
+import UpdateItem from "./UpdateItem";
 import Error from "./components/Error";
 import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
@@ -30,10 +31,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage productList={productList} deleteItem={deleteItem}/>} />
           <Route path="/AddItem" element={<AddItem addProduct={addProduct} productList={productList}/>}/>
+          <Route path= "/SingleProduct/:productId/edit" element={<UpdateItem productList={productList} setProductList={setProductList}/>}/>
           <Route path="/SingleProduct/:productId" element={<SingleProduct productList={productList} />} />
           <Route path="/footer" element={<Footer />} />
+          <Route path="/sidebar" element={<Sidebar />} />
           <Route path="*" element={<Error />} />
-          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          
         </Routes>
       </div>
       <h1>e-commerce</h1>

@@ -2,8 +2,9 @@ import { useParams, Navigate } from "react-router-dom";
 
 export default function SingleProduct({ productList }) {
   const { productId } = useParams();
-
+console.log(productId)
   const productFound = productList.find((product) => product.id == productId);
+ 
 
   if (!productFound) {
     return <Navigate to="/" />;
@@ -12,11 +13,18 @@ export default function SingleProduct({ productList }) {
   return (
     <div className="profile-wrapper">
       <div className="profile card flex">
-        <img
-          src={productFound.images[0]} // Assuming images is an array
-          alt={`${productFound.title} profile picture`}
-          className="w-16 h-9 object-cover" // Adjust size and margins as needed
-        />
+        <div>
+          
+        {productFound.images.map((image, index) => {
+          return(
+            <img
+              key={index}
+              src={image}
+              alt={`${index}`}
+               
+            />)
+        })}  
+        </div>
         <div>
           <h2 className="text-xl font-bold">{productFound.title}</h2>
           <p className="text-gray-600">{productFound.description}</p>

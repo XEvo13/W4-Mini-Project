@@ -1,21 +1,29 @@
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useParams} from "react-router-dom";
 import "./AddItem.css";
 
 const defaultImg =
   "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg";
 
-export default function AddItem({addProduct,productList}) {
-    const [title, setTitle] = useState("");
-    const [imagesURL, setImagesURL] = useState("");
-    const [thumbnailURL, setThumbnailURL] = useState("")
-    const [description, setDescription] = useState("");
-    const [price, setPrice] = useState(0);
-    const [discountPercentage, setDiscountPercentage] = useState(0);
-    const [rating, setRating] = useState(0);
-    const [stock, setStock] = useState(0);
-    const [brand, setBrand] = useState("");
-    const [category, setCategory] = useState("");
+export default function UpdateItem({productList, setProductList}) {
+    // find student using .find()
+    const {productId} = useParams(); 
+    const product = productList.find((product) => product.id == productId);
+    // if student is not found, redirect to students list
+    if (!product) return <Navigate to="/" />;
+
+    const [id, setiD] = useState(product.id)
+    const [title, setTitle] = useState(product.title);
+    const [imagesURL, setImagesURL] = useState(product.images);
+    const [thumbnailURL, setThumbnailURL] = useState(product.thumbnail)
+    const [description, setDescription] = useState(product.description);
+    const [price, setPrice] = useState(product.price);
+    const [discountPercentage, setDiscountPercentage] = useState(product.discountPercentage);
+    const [rating, setRating] = useState(product.rating);
+    const [stock, setStock] = useState(product.stock);
+    const [brand, setBrand] = useState(product.brand);
+    const [category, setCategory] = useState(product.category);
     
 
     const navigate = useNavigate();
@@ -49,27 +57,38 @@ export default function AddItem({addProduct,productList}) {
             return;
         }
         
-        const id = productList.length+1;
+        const updatedProduct = productList.map((product) => {
+            const thumbnail = thumbnailURL || defaultImg;
+            const images = imagesURL || defaultImg;
+            if (product.id == productId) {
+              return { id,title,images,thumbnail, description, price, discountPercentage,rating,stock, brand, category};
+            }
+            return product;
+          });
+      
+          // update student in the list
+          setProductList(updatedProduct);
+
+        // const id = productList.length+1;
 
         
         // const imagess = images || defaultImg;
-        const thumbnail = thumbnailURL || defaultImg;
-        const images = [imagesURL] || [defaultImg]
-        addProduct({ id, title,images, thumbnail, description, price, discountPercentage,rating,stock, brand, category });
+        // const thumbnail = thumbnailURL || defaultImg;
+        // addProduct({ id, title,thumbnail, description, price, discountPercentage,rating,stock, brand, category });
       
    
-        setTitle("");
-        // setImages("");
-        setThumbnailURL("");
-        setDescription("");
-        setPrice(0);
-        setDiscountPercentage(0);
-        setRating(0);
-        setStock(0);
-        setBrand("");
-        setCategory("")
+        // setTitle("");
+        // // setImages("");
+        // setThumbnailURL("");
+        // setDescription("");
+        // setPrice(0);
+        // setDiscountPercentage(0);
+        // setRating(0);
+        // setStock(0);
+        // setBrand("");
+        // setCategory("")
    
-        navigate("/");
+         navigate("/");
     };
 
     return (
@@ -77,6 +96,13 @@ export default function AddItem({addProduct,productList}) {
         <h1>📱 Add product 📲</h1>
         <form>
             <div className="input-wrapper">
+            {/* <label>Id:</label>
+            <input
+                type="text"
+                name="name"
+                value={id}
+                
+            /> */}
             <label>Title:</label>
             <input
                 type="text"
