@@ -19,7 +19,6 @@
   align-items: center;
   text-decoration-color: white;
   text-decoration-line: underline;
- 
 }
 
 .nav-bar-ul li {
@@ -33,8 +32,6 @@
   background-color: rgb(40, 84, 128);
   padding: 14px 0;
   background-image: url("../src/assets/images/images.png");
-  
-  
 }
 
 
@@ -65,20 +62,31 @@
 }
 
 .sidebar {
-  width: 75px ;
   height: 100%;
+  width: 75px;
+  position: fixed;
+  z-index: 1; 
+  top: 0;
+  left: 0;
   background-color: rgb(40, 84, 128);
-  margin: 0%;
-  flex-direction: column;
-}
-
-.sidebar-ul {
-  width: 100%;
-  padding: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
 }
 
 .sidebar-ul li {
-  list-style-type: none;
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
   color: white;
-  margin-bottom: 10px;
-}    
+  display: block;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}  
