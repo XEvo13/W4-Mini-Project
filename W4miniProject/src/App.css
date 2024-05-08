@@ -63,14 +63,14 @@
 
 .sidebar {
   height: 100%;
-  width: 75px;
-  position: fixed;
-  z-index: 1; 
-  top: 0;
-  left: 0;
   background-color: rgb(40, 84, 128);
-  overflow-x: hidden;
-  padding-top: 20px;
+  margin: 0%;
+  flex-direction: column;
+}
+
+.sidebar-ul {
+  width: 100%;
+  padding: 0;
 }
 
 .sidebar-ul li {
