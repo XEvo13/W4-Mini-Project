@@ -22,7 +22,7 @@ export default function AddItem({addProduct,productList}) {
 
     const handleTitle = (e) => {setTitle(e.target.value);};
 
-    const handleImagesURL = (e) => {setImagesURL(e.target.value);};
+    const handleImagesURL = (e) => {setImagesURL(e.target.value.split(","));};
 
     const handleThumbnail = (e) => {setThumbnailURL(e.target.value);};
 
@@ -44,7 +44,7 @@ export default function AddItem({addProduct,productList}) {
     const handleSubmit = (e) => {
         e.preventDefault();
    
-        if (!title || !description || !price ) {
+        if (!title || !description || !price || !imagesURL) {
             alert("Please fill in all fields");
             return;
         }
@@ -54,7 +54,8 @@ export default function AddItem({addProduct,productList}) {
         
         // const imagess = images || defaultImg;
         const thumbnail = thumbnailURL || defaultImg;
-        const images = [imagesURL] || [defaultImg]
+        const images = imagesURL;
+        //|| [defaultImg]
         addProduct({ id, title,images, thumbnail, description, price, discountPercentage,rating,stock, brand, category });
       
    

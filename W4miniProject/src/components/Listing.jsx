@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export default function Listing({productList,deleteItem }) {
 
   console.log(productList.length)
-  console.log(productList)
+  console.log(productList[0])
     return (
         <div className="input-wrapper">
           <ul className="grid grid-cols-2 gap-4">

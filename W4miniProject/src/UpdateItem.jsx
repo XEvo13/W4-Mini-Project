@@ -30,7 +30,7 @@ export default function UpdateItem({productList, setProductList}) {
 
     const handleTitle = (e) => {setTitle(e.target.value);};
 
-    const handleImagesURL = (e) => {setImagesURL(e.target.value);};
+    const handleImagesURL = (e) => {setImagesURL(e.target.value.split(","));};
 
     const handleThumbnail = (e) => {setThumbnailURL(e.target.value);};
 
@@ -52,15 +52,18 @@ export default function UpdateItem({productList, setProductList}) {
     const handleSubmit = (e) => {
         e.preventDefault();
    
-        if (!title || !description || !price ) {
+        if (!title || !description || !price || !imagesURL ) {
             alert("Please fill in all fields");
             return;
         }
         
         const updatedProduct = productList.map((product) => {
             const thumbnail = thumbnailURL || defaultImg;
-            const images = imagesURL || defaultImg;
-            if (product.id == productId) {
+            
+            /* const arrimg = imagesURL.split(",") */
+            const images = imagesURL;
+            
+            if (product.id == productId ) {
               return { id,title,images,thumbnail, description, price, discountPercentage,rating,stock, brand, category};
             }
             return product;
