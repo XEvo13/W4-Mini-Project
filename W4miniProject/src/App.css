@@ -90,3 +90,19 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }  
+
+.profile-card-flex{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  flex-direction: row;  
+  background-color: white;
+}
+
+.profile-card-image {
+align-self: stretch;
+}
+
+.descriptions-container{
+  font-size: 27px;
+  
+}

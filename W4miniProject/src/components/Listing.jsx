@@ -9,7 +9,7 @@ export default function Listing({productList,deleteItem }) {
   console.log(productList[0])
     return (
         <div className="input-wrapper">
-          <ul className="grid grid-cols-2 gap-4">
+          <ul className="grid-cols">
             {productList.map((product,productId) => (
              <li key={productId}>
                <div>{product.title}</div> 

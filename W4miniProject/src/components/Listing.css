@@ -105,3 +105,9 @@ form button {
 form button:hover {
     background-color: #535bf2;
 }
+
+.grid-cols{
+    display: grid;
+    grid-template-columns: 55% 35%;
+    background-color: #535bf2;
+}
