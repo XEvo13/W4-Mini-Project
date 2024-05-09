@@ -127,7 +127,7 @@ form button {
 
 .grid-cols{
     display: grid;
-    margin-left: 3%;
+    margin-left: 10%;
     grid-template-columns: 55% 35%;
     background-color: #cccdd6;
     list-style-type: none;
