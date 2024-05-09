@@ -27,6 +27,7 @@ export default function Listing({productList,deleteItem }) {
             ))}
           </ul>
         </div>
+    
         
       )
       

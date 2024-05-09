@@ -113,6 +113,16 @@ form button {
 
 .edit-button {
     text-decoration: none;
+} */
+
+.delete-button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+.edit-button {
+    text-decoration: none;
 }
 
 .grid-cols{

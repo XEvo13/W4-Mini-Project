@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import User from "../assets/images/user.png"
+import User from "../assets/images/user.png";
+import "../pages/User";
 
 function Navbar () {
     return (
