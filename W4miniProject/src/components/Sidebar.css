@@ -9,7 +9,13 @@
     overflow-x: hidden;
     padding-top: 20px;
 }
-  
+
+.Products{
+    text-align: center;
+    color: aliceblue;
+    font-size: 40px;
+}
+
 .sidebar-ul li {
     padding: 6px 8px 6px 16px;
     text-decoration: none;

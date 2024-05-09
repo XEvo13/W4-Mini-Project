@@ -13,6 +13,8 @@ import Error from "./components/Error";
 import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar"
+import Aboutus from "./components/Aboutus"
+// import User from "./components/User"
 import "./App.css";
 
 function App() {
@@ -31,15 +33,19 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage productList={productList} deleteItem={deleteItem}/>} />
           <Route path="/AddItem" element={<AddItem addProduct={addProduct} productList={productList}/>}/>
+          {/* <Route path="/User" element={<User />}/> */}
           <Route path= "/SingleProduct/:productId/edit" element={<UpdateItem productList={productList} setProductList={setProductList}/>}/>
           <Route path="/SingleProduct/:productId" element={<SingleProduct productList={productList} />} />
-          <Route path="/footer" element={<Footer />} />
           <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path="/footer" element={<Footer />} />
+          
           <Route path="*" element={<Error />} />
           
         </Routes>
+        <Sidebar  productList={productList}/>
+        <Footer />
       </div>
-      <h1>e-commerce</h1>
     </div>
   );
 }

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../assets/images/user.png"
 
-const defaultImg = "assets/images/user.png"
+const defaultImg = "../assets/images/user.png"
 
-export default function CreateProfile() {
+export default function User() {
     const [name, setName] = useState("");
     const [imgURL, setImgURL] = useState("");
     const [email, setEmail] = useState("");
@@ -23,15 +24,15 @@ export default function CreateProfile() {
             return;
         }
    
-        const id = uuidv4();
+        const id = 1;
         const img = imgURL || defaultImg;
-        CreateProfile({ id, name, img, email });
+        User({ id, name, img, email });
    
         setName("");
         setImgURL("");
         setEmail("");
    
-        navigate("/profile");
+        navigate("/");
     };
 
     return (

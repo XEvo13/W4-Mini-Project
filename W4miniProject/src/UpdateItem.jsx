@@ -8,6 +8,7 @@ const defaultImg =
 
 export default function UpdateItem({productList, setProductList}) {
     // find student using .find()
+    
     const {productId} = useParams(); 
     const product = productList.find((product) => product.id == productId);
     // if student is not found, redirect to students list
@@ -96,7 +97,7 @@ export default function UpdateItem({productList, setProductList}) {
 
     return (
         <div>
-        <h1>📱 Add product 📲</h1>
+        <h1>📱 Edit product 📲</h1>
         <form>
             <div className="input-wrapper">
             {/* <label>Id:</label>

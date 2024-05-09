@@ -31,13 +31,13 @@ console.log(productId)
         })}  
         </div>
         <div className="descriptions-container">
-          <h2 className="text-xl font-bold" >{productFound.title}</h2>
-          <p className="text-gray-600">{productFound.description}</p>
-          <p className="text-gray-800">${productFound.price}</p>
-          <p className="text-gray-800">{productFound.rating}</p>
-          <p className="text-gray-800">{productFound.stock}</p>
-          <p className="text-gray-800">{productFound.brand}</p>
-          <p className="text-gray-800">{productFound.category}</p>
+          <h2 className="text-xl font-bold" >TITLE: {productFound.title}</h2>
+          <p className="text-gray-600">DESCRIPTION: {productFound.description}</p>
+          <p className="text-gray-800">PRICE $: {productFound.price}</p>
+          <p className="text-gray-800">RATING: {productFound.rating}</p>
+          <p className="text-gray-800">STOCK: {productFound.stock}</p>
+          <p className="text-gray-800">BRAND: {productFound.brand}</p>
+          <p className="text-gray-800">CATEGORY: {productFound.category}</p>
 
         </div>
       </div>

@@ -14,12 +14,13 @@ export default function Listing({productList,deleteItem }) {
              <li key={productId}>
                <div>{product.title}</div> 
                <div>{product.description}</div>
+               {product.discountPercentage > 15 && <div className="greatDeal">GREAT DEAL!</div>}
                <Link to={`/SingleProduct/${product.id}`}>
-                  <img src={product.thumbnail} alt={product.title} />
+                  <img src={product.thumbnail} style={{width:250,height:150}}  alt={product.title} />
                </Link>
-               <Link className="button" to={`/SingleProduct/${product.id}/edit`}>📱EDIT📲
+               <Link className="edit-button" to={`/SingleProduct/${product.id}/edit`}>✏️
                </Link>
-               <button onClick={() => deleteItem(product.id)}>🗑️</button>
+               <button className="delete-button" onClick={() => deleteItem(product.id)}>🗑️</button>
                <br />
                <br />
              </li>

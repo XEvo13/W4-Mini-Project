@@ -96,18 +96,36 @@ form button {
     width: 100%;
     border-radius: 10px;
     border: none;
-    background-color: #646cff;
-    color: white;
     font-size: 16px;
+    background-color: transparent;
     cursor: pointer;
 }
 
-form button:hover {
+/* .button:hover {
     background-color: #535bf2;
+} */
+
+.delete-button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+}
+
+.edit-button {
+    text-decoration: none;
 }
 
 .grid-cols{
     display: grid;
+    margin-left: 3%;
     grid-template-columns: 55% 35%;
-    background-color: #535bf2;
+    background-color: #cccdd6;
+    list-style-type: none;
+    text-align: left;
 }
+
+.greatDeal{
+    background-color: rgb(40, 84, 128);
+    width: 30%;
+    color: aliceblue;
+  }

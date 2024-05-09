@@ -10,13 +10,13 @@ function Navbar () {
             Home
             </NavLink>
 
-            <NavLink to="/Listing" className={({isActive}) => (isActive ? "active" : "")}>
-            Products List
+            <NavLink to="/Aboutus" className={({isActive}) => (isActive ? "active" : "")}>
+            About Us
             </NavLink>
 
-            <NavLink to="/Profile" className={({isActive}) => (isActive ? "active" : "")}>
+            {/* <NavLink to="/User" className={({isActive}) => (isActive ? "active" : "")}>
             <img src={User} style={{height:"80px"}}/>
-           </NavLink>   
+           </NavLink>    */}
 
            <NavLink to="/AddItem" className={({isActive}) => (isActive ? "active" : "")}>
             Add Item
