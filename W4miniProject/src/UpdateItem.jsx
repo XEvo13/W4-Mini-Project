@@ -208,6 +208,8 @@ export default function UpdateItem({productList, setProductList}) {
             <button type="submit" onClick={handleSubmit}>Save</button>
            
         </form>
+        <br/>
+        <br/>
         </div>
     );
 }

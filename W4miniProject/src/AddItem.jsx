@@ -179,6 +179,8 @@ export default function AddItem({addProduct,productList}) {
             <button type="submit" onClick={handleSubmit}>Save</button>
            
         </form>
+        <br/>
+        <br/>
         </div>
     );
 }

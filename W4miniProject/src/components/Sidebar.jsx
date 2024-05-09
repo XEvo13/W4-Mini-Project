@@ -18,9 +18,6 @@ function SideBar({productList}) {
     return(
         <nav className="sidebar">
             <ul className="sidebar-ul">
-                <NavLink to="/AddItem" className={({isActive}) => (isActive ? "active" : "")}>
-                    <button className="button" onClick={AddItem}>Create</button>
-                </NavLink>
                 <br/>
                 <br/>
                 <div className="Products"> Products: {productList.length}</div>

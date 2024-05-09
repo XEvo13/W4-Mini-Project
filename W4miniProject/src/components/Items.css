@@ -6,8 +6,15 @@
     align-items: center;
 }
   
-.register {
+.register-card {
     background-color: #1a1a1a;
     border-radius: 20px;
+}
+
+.img-item {
+    width: 150px;
+    height: 100px;
+    border-radius: 20px;
+
 }
   

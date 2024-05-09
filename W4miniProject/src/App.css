@@ -1,9 +1,6 @@
 #root {
-  /* max-width: 1280px; */
   margin: auto;
-  
   margin-bottom: 0;
-  /* padding: 10px; */
   text-align: center;
 } 
 
@@ -20,16 +17,12 @@
   justify-content: space-evenly;
   align-items: center;
   text-decoration-color: white;
-  text-decoration-line: underline;
   list-style-type: none;
-  
 }
 
 .nav-bar-ul li {
   list-style-type: none;
   text-align: center;
-
-  
 }
 
 .nav-bar {
@@ -37,7 +30,6 @@
   background-color: rgb(40, 84, 128);
   padding: 14px 0;
   margin-top: 0px;
- 
 }
 
 
@@ -52,7 +44,6 @@
   height: 25px;
   background-color: rgb(40, 84, 128);
   bottom: 0px;
-  
 }
 
 .footer-ul {
@@ -68,6 +59,7 @@
 }
 
 .sidebar {
+  width: 50px;
   height: 100%;
   background-color: rgb(40, 84, 128);
   margin: 0%;
@@ -75,7 +67,7 @@
 }
 
 .sidebar-ul {
-  width: 100%;
+  width: 95%;
   padding: 0;
 }
 
@@ -88,7 +80,7 @@
 }
 
 .main {
-  margin-left: 160px; /* Same as the width of the sidebar */
+  margin-left: 160px;
   padding: 0px 10px;
 }
 
@@ -105,11 +97,14 @@
 }
 
 .profile-card-image {
-align-self: stretch;
+  align-self: stretch;
 }
 
 .descriptions-container{
   font-size: 27px;
   color: white
-  
+}
+.about {
+  font-size: 25px;
+  font-style: italic;
 }

@@ -14,6 +14,7 @@ import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar"
 import Aboutus from "./components/Aboutus"
+import Items from "./components/Items"
 // import User from "./components/User"
 import "./App.css";
 

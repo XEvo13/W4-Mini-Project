@@ -101,10 +101,6 @@ form button {
     cursor: pointer;
 }
 
-/* .button:hover {
-    background-color: #535bf2;
-} */
-
 .delete-button {
     text-decoration: none;
     border: none;
@@ -113,7 +109,7 @@ form button {
 
 .edit-button {
     text-decoration: none;
-} */
+} 
 
 .delete-button {
     text-decoration: none;
@@ -135,7 +131,7 @@ form button {
 }
 
 .greatDeal{
-    background-color: rgb(40, 84, 128);
+    background-color: rgb(63, 71, 66);
     width: 30%;
-    color: aliceblue;
+    color: rgb(247, 247, 247);
   }

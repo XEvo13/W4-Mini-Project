@@ -40,6 +40,12 @@ console.log(productId)
           <p className="text-gray-800">CATEGORY: {productFound.category}</p>
 
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
       </div>
     </div>
   );

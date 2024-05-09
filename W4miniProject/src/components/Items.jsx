@@ -17,8 +17,8 @@ export default function Item({ items }) {
 
   return (
     <div className="register-wrapper">
-      <div className="register card">
-        <img
+      <div className="register-card">
+        <img className="img-item"
           src={item.img}
           alt={`${item.name} register picture`}
           width={300}
