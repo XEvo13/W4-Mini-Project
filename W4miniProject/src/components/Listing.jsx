@@ -17,15 +17,16 @@ export default function Listing({productList,deleteItem }) {
                <Link to={`/SingleProduct/${product.id}`}>
                   <img src={product.thumbnail} alt={product.title} />
                </Link>
-               <Link className="button" to={`/SingleProduct/${product.id}/edit`}>📱EDIT📲
+               <Link className="edit-button" to={`/SingleProduct/${product.id}/edit`}>✏️
                </Link>
-               <button onClick={() => deleteItem(product.id)}>🗑️</button>
+               <button className="delete-button" onClick={() => deleteItem(product.id)}>🗑️</button>
                <br />
                <br />
              </li>
             ))}
           </ul>
         </div>
+    
         
       )
       

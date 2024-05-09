@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import User from "../assets/images/user.png"
+import User from "../assets/images/user.png";
+import "../pages/User";
 
 function Navbar () {
     return (
@@ -14,7 +15,7 @@ function Navbar () {
             Products List
             </NavLink>
 
-            <NavLink to="/Profile" className={({isActive}) => (isActive ? "active" : "")}>
+            <NavLink to="/User" className={({isActive}) => (isActive ? "active" : "")}>
             <img src={User} style={{height:"80px"}}/>
            </NavLink>   
 
